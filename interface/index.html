@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="main.css">
+        <script src="client.js"></script>
+        <script>
+            window.onload = readAll;
+        </script>
+        <style>
+            tr:nth-child(even) {
+                /*class="bg-gray-50";*/
+                background: #E5E7EB;
+            }
+            tr:nth-child(odd) {
+                /*    class="bg-white";*/
+                background: white;
+            }
+            td *{
+                margin-left: 1rem;
+            }
+        </style>
+    </head>
+    <body class="overflow-hidden">
+        <!-- Language -->
+        <div id="index" class="h-screen w-screen">
+            <div class="mt-5 text-center">
+                <h1 class="text-3xl font-bold">Language Selection</h1>
+                <h2 class="text-xl">Select your system language</h2>
+            </div><br>
+            <div class="flex justify-center items-center">
+                <div class="mx-14">
+                    <img src="assets/icon128px-exported-black.png">
+                </div>
+                <div class="mx-14 h-80 w-64 overflow-y-scroll">
+                    <table id="langs" class="table w-full">
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Keyboards -->
+        <div id="select_keyboard" class="hidden h-screen w-screen">
+            <div class="mt-5 text-center">
+                <h1 class="text-3xl font-bold">Keyboard Selection</h1>
+                <h2 class="text-xl">Select your keyboard configuration</h2>
+            </div><br>
+            <div class="flex justify-center items-center">
+                <div class="mx-14">
+                    <img src="assets/public_domain_keyboard-128px.png">
+                </div>
+                <div class="mx-14 h-80 w-64 overflow-y-scroll">
+                    <table id="keybds" class="table even:bg-gray w-full">
+                    </table>
+                </div>
+            </div>
+            <div class="w-screen flex justify-end">
+                <a class="bg-pink-900 hover:bg-pink-700 rounded text-white px-5 py-1 mt-5 mr-5" onclick="resetPrevious(1);changePage('index', 'select_keyboard')">Back</a>
+            </div>
+        </div>
+        <div id="select_disk" class="hidden h-screen w-screen">
+            <div class="mt-5 text-center">
+                <h1 class="text-3xl font-bold">User Setup</h1>
+                <h2 class="text-xl">Create your user account</h2>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="mx-14">
+                    <img src="assets/">
+                </div>
+                <div class="mx-14 h-80 w-64 overflow-y-scroll">
+                </div>
+            </div>
+            <div class="w-screen flex justify-end">
+                <a class="bg-pink-900 hover:bg-pink-700 rounded text-white px-5 py-1 mt-5 mr-5" onclick="resetPrevious(2);changePage('select_keyboard', 'user_setup')">Back</a>
+            </div>
+        </div>
+    </body>
+</html>
