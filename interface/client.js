@@ -8,16 +8,16 @@ function resetPrevious(previousSectionNumber){
 }
 
 function updateConfig(configuring, conf_value){
-    writer.config(`${configuring}=${conf_value}`);
+    writer.config(`${configuring}="${conf_value}"`);
 }
 
-function readAllAndSetData(list, currentID, nextID, tableID){
+function readAllAndSetData(list, currentID, nextID, tableID, configName){
     data_list = list.split(",");
     for(i in data_list){
         data = data_list[i].split("|")
         var newHtml =  `<tr class="table-row w-full">
                             <td class="table-cell">
-                                <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('lang','${data[0]}');">
+                                <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('${configName}','${data[0].trim()}');">
                                     ${data[1]}
                                 </a>
                             </td>
@@ -30,6 +30,6 @@ function readAllAndSetData(list, currentID, nextID, tableID){
 function readAll(){
     languages = reader.fileLanguages();
     keyboards = reader.fileKeyboards();
-    readAllAndSetData(languages, "index", "select_keyboard", "langs")
-    readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds")
+    readAllAndSetData(languages, "index", "select_keyboard", "langs", "lang")
+    readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
 }
