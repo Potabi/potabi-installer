@@ -75,5 +75,23 @@
                 <a class="bg-pink-900 hover:bg-pink-700 rounded text-white px-5 py-1 mt-5 mr-5" onclick="resetPrevious(2);changePage('select_keyboard', 'user_setup')">Back</a>
             </div>
         </div>
+        <div id="disk_warning" class="hidden h-screen w-screen">
+            <div class="mt-5 text-center">
+                <h1 class="text-3xl font-bold">User Setup</h1>
+                <h2 class="text-xl">Create your user account</h2>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="mx-14">
+                    <img src="assets/">
+                </div>
+                <div class="mx-14 h-80 w-64 overflow-y-scroll">
+                    <table id="disklist" class="table even:bg-gray w-full">
+                    </table>
+                </div>
+            </div>
+            <div class="w-screen flex justify-end">
+                <a class="bg-pink-900 hover:bg-pink-700 rounded text-white px-5 py-1 mt-5 mr-5" onclick="resetPrevious(2);changePage('select_keyboard', 'user_setup')">Back</a>
+            </div>
+        </div>
     </body>
 </html>
