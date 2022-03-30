@@ -50,5 +50,5 @@ function readAll(){
     disks = reader.fileDisks();
     readAllAndSetData(languages, "index","select_keyboard", "langs", "lang")
     readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
-    printDisks(disks, "select_disks", "disk_warning", "disklist", "disk")
+    printDisks(disks, "select_disk", "disk_warning", "disklist", "disk")
 }
