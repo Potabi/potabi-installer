@@ -19,6 +19,10 @@ class SystemModifier(QObject):
     def exec(self, message):
         os.system(message)
 
+    @pyqtSlot(str)
+    def getDisks(self):
+        os.system("sh pcsysinstall/disklist.sh > conf/disks.txt")
+
 system = SystemModifier()
 
 class SystemRead(QObject):
@@ -50,6 +54,20 @@ class SystemRead(QObject):
         for i in data:
             keyboardNames += i + " "
         return keyboardNames
+
+    @pyqtSlot(result=str)
+    def fileDisks(self):
+        data = list()
+        SystemModifier.getDisks()
+        with open("conf/disks.txt") as read_file:
+            for i in read_file.readlines():
+                if i.endswith("\n"):
+                    i = i.replace("\n", ",")
+                data.append(i)
+        diskNames = str()
+        for i in data:
+            diskNames += i + "|"
+        return diskNames
 
 reader = SystemRead()
 
