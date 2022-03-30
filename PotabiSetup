@@ -19,10 +19,6 @@ class SystemModifier(QObject):
     def exec(self, message):
         os.system(message)
 
-    @pyqtSlot(str)
-    def getDisks(self):
-        os.system("sh pcsysinstall/disklist.sh > conf/disks.txt")
-
 system = SystemModifier()
 
 class SystemRead(QObject):

@@ -30,8 +30,8 @@ function readAllAndSetData(list, currentID, nextID, tableID, configName){
 function readAll(){
     languages = reader.fileLanguages();
     keyboards = reader.fileKeyboards();
-    system.getDisks();
-    disks     = reader.fileDisks();
+    system.exec(`sh pcsysinstall/disklist.sh > conf/disks.txt`);
+    disks = reader.fileDisks();
     readAllAndSetData(languages, "index","select_keyboard", "langs", "lang")
     readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
     readAllAndSetData(disks,"select_disks", "", "disklist", "disk")
