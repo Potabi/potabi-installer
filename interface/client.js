@@ -34,7 +34,7 @@ function printDisks(list, currentID, nextID, tableID, configName) {
         var newHtml =  `<tr class="table-row w-full">
                             <td class="table-cell">
                                 <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('${configName}','${data[0].trim()}');">
-                                    ${data[1]}
+                                    ${data[0]} | ${data[1]}
                                 </a>
                             </td>
                         </tr>
@@ -50,5 +50,5 @@ function readAll(){
     disks = reader.fileDisks();
     readAllAndSetData(languages, "index","select_keyboard", "langs", "lang")
     readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
-    printDisks(disks,"select_disks", "", "disklist", "disk")
+    printDisks(disks, "select_disks", "disk_warning", "disklist", "disk")
 }
