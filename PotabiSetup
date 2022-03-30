@@ -58,7 +58,6 @@ class SystemRead(QObject):
     @pyqtSlot(result=str)
     def fileDisks(self):
         data = list()
-        SystemModifier.getDisks()
         with open("conf/disks.txt") as read_file:
             for i in read_file.readlines():
                 if i.endswith("\n"):

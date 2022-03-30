@@ -30,6 +30,7 @@ function readAllAndSetData(list, currentID, nextID, tableID, configName){
 function readAll(){
     languages = reader.fileLanguages();
     keyboards = reader.fileKeyboards();
+    system.getDisks();
     disks     = reader.fileDisks();
     readAllAndSetData(languages, "index","select_keyboard", "langs", "lang")
     readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
