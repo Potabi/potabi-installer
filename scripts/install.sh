@@ -6,3 +6,7 @@ mkdir -pv /mnt/install
 zpool create install-potabi /dev/${disk}
 zfs set mountpoint=/mnt/install install-potabi
 zfs set compression=gzip-6 install-potabi
+
+
+# Unmount at end of script
+zfs unmount -f /mnt/install
