@@ -18,7 +18,7 @@ function readAllAndSetData(list, currentID, nextID, tableID, configName){
         var newHtml =  `<tr class="table-row w-full">
                             <td class="table-cell">
                                 <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('${configName}','${data[0].trim()}');">
-                                    ${data[1]}
+                                ${data[0]} | ${data[1]}
                                 </a>
                             </td>
                         </tr>
