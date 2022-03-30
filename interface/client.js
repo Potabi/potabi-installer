@@ -34,13 +34,12 @@ function printDisks(list, currentID, nextID, tableID, configName) {
         var newHtml =  `<tr class="table-row w-full">
                             <td class="table-cell">
                                 <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('${configName}','${data[0]}');">
-                                    ${data[0]} | ${data[1]}
+                                    ${configName} ${data[0]} | ${data[1]}
                                 </a>
                             </td>
                         </tr>
                         `
         document.getElementById(tableID).innerHTML += newHtml;
-        system.exec(`echo ${configName}`)
     }
 }
 
