@@ -33,7 +33,7 @@ function printDisks(list, currentID, nextID, tableID, configName) {
         data = data_list[i].split(":")
         var newHtml =  `<tr class="table-row w-full">
                             <td class="table-cell">
-                                <a onclick="updateConfig('${configName}','${data[0]}');changePage('${nextID}', '${currentID}');">
+                                <a onclick="updateConfig('${configName}','${data[0]}'); changePage('${nextID}', '${currentID}');">
                                     ${data[0]} | ${data[1]}
                                 </a>
                             </td>
