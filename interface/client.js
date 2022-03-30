@@ -27,6 +27,22 @@ function readAllAndSetData(list, currentID, nextID, tableID, configName){
     }
 }
 
+function printDisks(list, currentID, nextID, tableID, configName) {
+    data_list = list.split("\n");
+    for(i in data_list){
+        data = data_list[i].split(":")
+        var newHtml =  `<tr class="table-row w-full">
+                            <td class="table-cell">
+                                <a onclick="changePage('${nextID}', '${currentID}'); updateConfig('${configName}','${data[0].trim()}');">
+                                    ${data[1]}
+                                </a>
+                            </td>
+                        </tr>
+                        `
+        document.getElementById(tableID).innerHTML += newHtml;
+    }
+}
+
 function readAll(){
     languages = reader.fileLanguages();
     keyboards = reader.fileKeyboards();
@@ -34,5 +50,5 @@ function readAll(){
     disks = reader.fileDisks();
     readAllAndSetData(languages, "index","select_keyboard", "langs", "lang")
     readAllAndSetData(keyboards, "select_keyboard", "select_disk", "keybds", "keyboard")
-    readAllAndSetData(disks,"select_disks", "", "disklist", "disk")
+    printDisks(disks,"select_disks", "", "disklist", "disk")
 }
