@@ -10,3 +10,4 @@ zfs set compression=gzip-6 install-potabi
 
 # Unmount at end of script
 zfs unmount -f /mnt/install
+zpool destroy -f install-potabi
