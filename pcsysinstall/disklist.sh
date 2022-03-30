@@ -128,7 +128,7 @@ do
     # USB Device, we list those last
 
     # First, lets make sure that this isn't install media
-    glabel status | grep "${DEV}p3" | grep -q "TRUEOS_INSTALL"
+    glabel status | grep "${DEV}p3" | grep -q "POTABI"
     if [ $? -eq 0 ] ; then continue; fi
 
     if [ -n "$USBLIST" ]; then
