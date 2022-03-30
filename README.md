@@ -22,3 +22,6 @@ speicific scripts
 - [ ] Connect to packages in build folder
 - [ ] Installs base system to drive
 - [ ] Installs packages for first boot
+
+## Future:
+- [ ] Replace PC-SYSINSTALL with custom implementations
