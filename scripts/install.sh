@@ -3,7 +3,7 @@
 
 # Mount release
 mkdir -pv /mnt/install
-zpool create install-potabi /dev/${disk}
+zpool create -f install-potabi /dev/${disk}
 zfs set mountpoint=/mnt/install install-potabi
 zfs set compression=gzip-6 install-potabi
 
