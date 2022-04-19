@@ -13,15 +13,12 @@ speicific scripts
 ## TO-DO list
 - [x] Create languages page
 - [x] Create keyboards page
-- [ ] Create disk selection page
-- [ ] Add "Wipes disk" warning
-- [ ] Create installing system page with progress bar
+- [x] Create disk selection page
+- [x] Add "Wipes disk" warning
+- [ ] Create installing system page
 - [ ] Add language selection functionality
 - [ ] Add keyboard selection functionality
 - [ ] Add disk management functionality
 - [ ] Connect to packages in build folder
 - [ ] Installs base system to drive
 - [ ] Installs packages for first boot
-
-## Future:
-- [ ] Replace PC-SYSINSTALL with custom implementations
